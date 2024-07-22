@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reshu</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:  #F8C8DC;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        p{
+            text-align: center;
+            color: red;
+            font-size: 40px; 
+        }
+    </style>
+  </head>
+  <body>
+    <div class="gif_container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+        <p class="text1 text2"></p>
+    </div>
+        
+    
+    <script>
+              let arr = ['R','e','s','h','u','.','.'];
+      let arr2 =  ['B','a','a','t',' ','k','a','r',' ','g','e','y','..'];
+
+      let text1 = document.querySelector(".text1");
+      let text2 = document.querySelector(".text2");
+
+      function perform(letter, textElement) {
+          return new Promise((resolve) => {
+              setTimeout(() => {
+                  textElement.textContent += letter;
+                  resolve();
+              }, 300);
+          });
+      }
+
+      async function run() {
+          for(let i = 0; i < arr.length; i++){
+              await perform(arr[i], text1);
+          }
+
+          for(let i = 0; i < arr2.length; i++){
+              await perform(arr2[i], text2);
+          }
+      }
+
+      run();
+    </script>
+  </body>
+</html>
